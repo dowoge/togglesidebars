@@ -1,5 +1,5 @@
 /* Member List Toggle */
-@media screen and (max-width: 1442px) {
+@media screen and (max-width: 1450px) {
     /* chat bar */
     main form {
         width: calc(100% - 92px);
@@ -11,7 +11,7 @@
     }
 
     /* change chat and messages if in dms but not group dm */
-    [class^="content"]:has([class^="footer"]) {
+    [class^="chat"]>[class^="content"]:has([class*="outer"]) {
         /* chat bar */
         main form {
             width: calc(100% - 144px)

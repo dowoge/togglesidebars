@@ -1,0 +1,67 @@
+/* Member List Toggle */
+@media screen and (max-width: 1442px) {
+    /* chat bar */
+    main form {
+        width: calc(100% - 92px);
+    }
+
+    /* message area */
+    [class^="chat"]>[class^="messagesWrapper"] {
+        width: calc(100% - 60px);
+    }
+
+    /* change chat and messages if in dms */
+    [class^="content"]:has([class^="outer"]) {
+        /* chat bar */
+        main form {
+            width: calc(100% - 144px)
+        }
+        
+        /* message area */
+        [class^="chat"]>[class^="messagesWrapper"] {
+            width: calc(100% - 112px);
+        }   
+    }
+
+    /* member list */
+    [class^="content"]>[class^="container"]:has([class^="membersWrap"]),
+    [class^="content"]>[class^="membersWrap"] {
+        position: absolute;
+        right: -180px;
+        transition: all 500ms cubic-bezier(.22,1,.4,1);
+    }
+
+    /* member list hover */
+    [class^="content"]>[class^="container"]:has([class^="membersWrap"]):hover,
+    [class^="content"]>[class^="membersWrap"]:hover {
+        right: 0;
+    }
+
+    /* dm profile */
+    [class^="content"]>[class^="outer"] {
+        position: absolute;
+        right: -228px;
+        transition: all 500ms cubic-bezier(.22,1,.4,1);
+    }
+
+    /* dm profile content */
+    [class^="none"]>[class^="overlay"],
+    [class^="none"]>[class^="body"]>[class^="container"],
+    [class^="none"]>[class^="body"]>[class^="overlay"] {
+        position: relative;
+        right: -150px;
+        transition: all 300ms cubic-bezier(.22,1,.4,1);
+    }
+
+    /* dm profile hover */
+    [class^="content"]>[class^="outer"]:hover {
+        right: 0;
+        
+        /* dm profile content */
+        [class^="none"]>[class^="overlay"],
+        [class^="none"]>[class^="body"]>[class^="container"],
+        [class^="none"]>[class^="body"]>[class^="overlay"] {
+            right: 0;
+        }
+    }
+}

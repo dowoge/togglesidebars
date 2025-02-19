@@ -10,8 +10,8 @@
         width: calc(100% - 60px);
     }
 
-    /* change chat and messages if in dms */
-    [class^="content"]:has([class^="outer"]) {
+    /* change chat and messages if in dms but not group dm */
+    [class^="content"]:has([class^="footer"]) {
         /* chat bar */
         main form {
             width: calc(100% - 144px)
@@ -56,7 +56,7 @@
     /* dm profile hover */
     [class^="content"]>[class^="outer"]:hover {
         right: 0;
-        
+
         /* dm profile content */
         [class^="none"]>[class^="overlay"],
         [class^="none"]>[class^="body"]>[class^="container"],

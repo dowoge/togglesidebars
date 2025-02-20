@@ -1,0 +1,250 @@
+:root {
+    --transition-duration: 250ms;
+    --transition-effect: cubic-bezier(0.22, 1, 0.4, 1);
+}
+
+
+/* Member List Toggle */
+@media screen and (max-width: 1450px) {
+    /* member seperators */
+    [class ^= "membersWrap"] * [class ^= "membersGroup"] {
+        transition: all var(--transition-duration) var(--transition-effect);
+        position: relative;
+        right: -100px;
+        opacity: 0%;
+    }
+    
+    /* member list */
+    [class ^= "content"] > [class ^= "container"]:has([class ^= "membersWrap"]) {
+        transition: all var(--transition-duration) var(--transition-effect);
+        width: 60px;
+    }
+
+    /* member list hover */
+    [class ^= "content"] > [class ^= "container"]:has([class ^= "membersWrap"]):hover {
+        width: 240px;
+
+        /* make member seperators move and visible */
+        [class ^= "membersWrap"] * [class ^= "membersGroup"] {
+            right: 0px;
+            opacity: 100%;
+        }
+    }
+}
+
+
+/* DM Group & Profile Toggle */
+@media screen and (max-width: 1450px) {
+    /* dm profile */
+    [class ^= "content"] > [class ^= "outer"] {
+        transition: all var(--transition-duration) var(--transition-effect);
+        width: 112px;
+    }
+
+    /* dm profile content */
+    [class ^= "none"] > [class ^= "overlay"],
+    [class ^= "none"] > [class ^= "body"] > [class ^= "container"],
+    [class ^= "none"] > [class ^= "body"] > [class ^= "overlay"],
+    [class ^= "footer"] > [class ^= "button"] > [class ^= "contents"] {
+        transition: all var(--transition-duration) var(--transition-effect);
+        position: relative;
+        right: -150px;
+        opacity: 0%;
+    }
+
+    /* dm profile hover */
+    [class ^= "content"] > [class ^= "outer"]:hover {
+        width: 338px;
+
+        /* dm profile content */
+        [class ^= "none"] > [class ^= "overlay"],
+        [class ^= "none"] > [class ^= "body"] > [class ^= "container"],
+        [class ^= "none"] > [class ^= "body"] > [class ^= "overlay"],
+        [class ^= "footer"] > [class ^= "button"] > [class ^= "contents"] {
+            right: 0px;
+            opacity: 100%;
+        }
+    }
+}
+
+
+/* Channel & DM List Toggle */
+@media screen and (max-width: 1450px) {
+    /* channel list */
+    div[class ^= "base"] > [class ^= "content"] > [class ^= "sidebar"] {
+        transition: width var(--transition-duration) var(--transition-effect);
+        width: 65px !important;
+    }
+
+    /* stuff above channels */ 
+    [aria-label *= "server"] * [class ^= "header"] * [class *= "name"] {
+        /* server name */
+        transition: opacity var(--transition-duration) var(--transition-effect);
+        opacity: 0%;
+    }
+    [aria-label *= "server"] * [class ^= "header"] * [class *= "headerChildren"] {
+        /* server button */
+        transition: opacity var(--transition-duration) var(--transition-effect);
+        opacity: 0%;
+    }
+    [aria-label = "Channels"] * [class ^= "container"] > [class ^= "textArea"] {
+        /* server boosts */
+        transition: opacity var(--transition-duration) var(--transition-effect);
+        opacity: 0%;
+    }
+    [class ^= "containerDefault"] > [class ^= "link"] > [class ^= "content"] > [class ^= "name"] {
+        /* events */
+        transition: opacity var(--transition-duration) var(--transition-effect);
+        opacity: 0%;
+    }
+
+    /* channel seperators */
+    [class ^= "containerDefault"] > [class ^= "iconVisibility"] > [class ^= "mainContent"] > [class ^= "name"] {
+        /* sperator name */
+        transition: opacity var(--transition-duration) var(--transition-effect);
+        opacity: 0%;
+        margin-left: 17px;
+    }
+    [class ^= "containerDefault"] > [class ^= "iconVisibility"] > [class ^= "mainContent"] > [class ^= "icon"] {
+        /* seperator arrow icon */
+        margin-left: 18px;
+    }
+
+    /* channels */
+    [class ^= "linkTop"] > [class ^= "name"] {
+        /* channel names */
+        transition: opacity var(--transition-duration) var(--transition-effect);
+        opacity: 0%;
+        margin-left: 26px;
+    }
+    [class ^= "containerDefault"] * [class ^= "children"] {
+        /* buttons */
+        transition: opacity var(--transition-duration) var(--transition-effect);
+        opacity: 0%;
+    }
+    [class ^= "linkTop"] > [class ^= "iconContainer"] {
+        /* channel icons */
+        position: fixed;
+        left: 88px;
+    }
+    [class ^= "linkBottom"] {
+        /* stuff at the bottom of a channel name idk */
+        transition: opacity var(--transition-duration) var(--transition-effect);
+        opacity: 0%;
+    }
+
+    /* voice chat list */
+    [class ^= "containerDefault"] > [class ^= "list"] {
+        transition: all var(--transition-duration) var(--transition-effect);
+        position: relative;
+        left: -29px;
+    }
+    [class ^= voiceUser] > [class ^= "content"] > [class ^= "container"], [class ^= voiceUser] > [class ^= "content"] > [class ^= "icons"] {
+        transition: opacity var(--transition-duration) var(--transition-effect);
+        opacity: 0%;
+    }
+
+    /* user area */
+    /*[aria-label = "User area"] > [class ^= "wrapper"],
+    [aria-label = "User area"] > [class ^= "container"] > [class ^= "flex"],
+    [aria-label = "User area"] > [class ^= "container"] > [class ^= "avatarWrapper"] > [class ^= "nameTag"]*/
+    [aria-label = "User area"] > [class ^= "wrapper"],
+    [aria-label = "User area"] > [class ^= "container"] {
+        transition: all var(--transition-duration) var(--transition-effect);
+        position: relative;
+        left: -235px;
+        opacity: 0%;
+    }
+
+    /* DMs */
+    [aria-label = "Private channels"] * [class *= "HeaderContainer"] {
+        /* seperators */
+        transition: all var(--transition-duration) var(--transition-effect);
+        position: relative;
+        left: -200px;
+        opacity: 0%;
+    }
+    [aria-label = "Private channels"] * [class ^= "layout"] > [class ^= "content"] {
+        /* names */
+        transition: opacity var(--transition-duration) var(--transition-effect);
+        opacity: 0%;
+    }
+    [aria-label = "Private channels"] * [class ^= "avatarWithText"] > [class ^= "content"] {
+        /* button names above dms */
+        transition: opacity var(--transition-duration) var(--transition-effect);
+        opacity: 0%;
+    }
+
+    /* channel list and server list hover */
+    div[class ^= "base"] > [class ^= "content"] > [class ^= "sidebar"]:hover,
+    [aria-label = "Servers sidebar"]:hover + div[class ^= "base"] > [class ^= "content"] > [class ^= "sidebar"] {
+        width: 240px !important;
+        
+        /* make stuff above channels visible */
+        [aria-label *= "server"] * [class ^= "header"] * [class *= "name"] {
+            /* server name */
+            opacity: 100%;
+        }
+        [aria-label = "Channels"] * [class ^= "container"] > [class ^= "textArea"] {
+            /* server boosts */
+            opacity: 100%;
+        }
+        [class ^= "containerDefault"] > [class ^= "link"] > [class ^= "content"] > [class ^= "name"] {
+            /* events */
+            opacity: 100%;
+        }
+        [aria-label *= "server"] * [class ^= "header"] * [class *= "headerChildren"] {
+            /* server button */
+            opacity: 100%;
+        }
+
+        /* make channel seperators visible */
+        [class ^= "containerDefault"] > [class ^= "iconVisibility"] > [class ^= "mainContent"] > [class ^= "name"] {
+        opacity: 100%;
+        }
+
+        /* make channels visible */
+        [class ^= "linkTop"] > [class ^= "name"] {
+            /* channel names */
+            opacity: 100%;
+        }
+        [class ^= "containerDefault"] * [class ^= "children"] {
+            /* buttons */
+            opacity: 100%;
+        }
+        [class ^= "linkBottom"] {
+            /* stuff at the bottom of a channel name idk */
+            opacity: 100%;
+        }
+
+        /* make voice chat list move & visible*/
+        [class ^= "containerDefault"] > [class ^= "list"] {
+            left: 0px;
+        }
+        [class ^= voiceUser] > [class ^= "content"] > [class ^= "container"], [class ^= voiceUser] > [class ^= "content"] > [class ^= "icons"] {
+            opacity: 100%;
+        }
+
+        /* make user area visible */
+        [aria-label = "User area"] > [class ^= "wrapper"],
+        [aria-label = "User area"] > [class ^= "container"] {
+            left: 0px;
+            opacity: 100%;
+        }
+        
+        /* make dms visible */
+        [aria-label = "Private channels"] * [class *= "HeaderContainer"] {
+            /* seperators */
+            left: 0px;
+            opacity: 100%;
+        }
+        [aria-label = "Private channels"] * [class ^= "layout"] > [class ^= "content"] {
+            /* names */
+            opacity: 100%;
+        }
+        [aria-label = "Private channels"] * [class ^= "avatarWithText"] > [class ^= "content"] {
+            /* button names above dms */
+            opacity: 100%;
+        }
+    }
+}

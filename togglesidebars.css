@@ -127,6 +127,24 @@
         position: fixed;
         left: 88px;
     }
+    /* i don't really know, it just bothers me */
+    [aria-label = "Text icon"] {
+        transition: opacity var(--transition-duration) var(--transition-effect);
+        opacity: 0%;
+    }
+    [aria-label = "Voice icon"] {
+        transition: opacity var(--transition-duration) var(--transition-effect);
+        opacity: 0%;
+    }
+    [aria-label = "Voice (Limited) icon"] {
+        transition: opacity var(--transition-duration) var(--transition-effect);
+        opacity: 0%;
+    }
+    [aria-label = "Text (Limited) icon"] {
+        transition: opacity var(--transition-duration) var(--transition-effect);
+        opacity: 0%;
+    }
+    
     [class ^= "linkBottom"] {
         /* stuff at the bottom of a channel name idk */
         transition: opacity var(--transition-duration) var(--transition-effect);
@@ -200,7 +218,7 @@
 
         /* make channel seperators visible */
         [class ^= "containerDefault"] > [class ^= "iconVisibility"] > [class ^= "mainContent"] > [class ^= "name"] {
-        opacity: 100%;
+            opacity: 100%;
         }
 
         /* make channels visible */
